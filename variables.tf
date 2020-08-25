@@ -3,7 +3,7 @@ variable "project_name" {
   description = "(required) The project name used when creating resources in the destination account (e.g. myproject)"
 }
 
-variable "env" {
+variable "appenv" {
   type        = string
   description = "(optional) The application environment name"
   default     = "development"
