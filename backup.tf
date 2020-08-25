@@ -11,11 +11,11 @@ resource "aws_backup_plan" "backup" {
     target_vault_name = aws_backup_vault.backup_vault.name
 //    schedule          = "cron(0 0 0 ? * MON,TUE,WED,THU,FRI,SAT,SUN *)"
     schedule = "cron(0 0/5 0 ? * * *)"
-  }
 
-  lifecycle {
-    cold_storage_after = var.backup_cold_storage_days
-    delete_after = var.backup_retention_days
+    lifecycle {
+      cold_storage_after = var.backup_cold_storage_days
+      delete_after = var.backup_retention_days
+    }
   }
 }
 
