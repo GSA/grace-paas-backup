@@ -30,11 +30,11 @@ variable "full_backup_schedule" {
 variable "backup_retention_days" {
   type        = string
   description = "(optional) The max number of days to retain backups"
-  default     = "360"
+  default     = "365"
 }
 
 variable "backup_cold_storage_days" {
   type        = string
   description = "(optional) The number of days to wait before moving backups to cold storage"
-  default     = "30"
+  default     = "90"
 }
