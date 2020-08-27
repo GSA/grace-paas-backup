@@ -10,8 +10,8 @@ resource "aws_backup_plan" "backup" {
     rule_name         = "tf_example_backup_rule"
     target_vault_name = aws_backup_vault.backup_vault.name
 //    schedule          = "cron(0 0 0 ? * MON,TUE,WED,THU,FRI,SAT,SUN *)"
-    schedule = "cron(*/5 * * * *)"
-
+//    schedule = "cron(*/5 * * * *)"
+      schedule = var.backup_schedule
     lifecycle {
       cold_storage_after = var.backup_cold_storage_days
       delete_after = var.backup_retention_days

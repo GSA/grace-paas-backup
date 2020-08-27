@@ -15,16 +15,10 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "partial_backup_schedule" {
-  type        = string
-  description = "(optional) The cron backup schedule for partial backups"
-  default     = "cron(0 0 0 ? * MON,TUE,WED,THU,FRI,SAT *)"
-}
-
-variable "full_backup_schedule" {
+variable "backup_schedule" {
   type        = string
   description = "(optional) The cron backup schedule for full backups"
-  default     = "cron(0 0 0 ? * 1/1 *)"
+  default     = "cron(*/5 * * * *)"
 }
 
 variable "backup_retention_days" {
