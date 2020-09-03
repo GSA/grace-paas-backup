@@ -15,20 +15,38 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "backup_schedule" {
+variable "daily_backup_schedule" {
   type        = string
   description = "(optional) The cron backup schedule for full backups"
-  default     = "cron(*/5 * * * *)"
+  default     = "cron(1 * * */1 ? *)"
 }
 
-variable "backup_retention_days" {
+variable "daily_backup_retention_days" {
   type        = string
   description = "(optional) The max number of days to retain backups"
   default     = "365"
 }
 
-variable "backup_cold_storage_days" {
+variable "daily_backup_cold_storage_days" {
   type        = string
   description = "(optional) The number of days to wait before moving backups to cold storage"
-  default     = "90"
+  default     = "30"
+}
+
+variable "monthly_backup_schedule" {
+  type        = string
+  description = "(optional) The cron backup schedule for full backups"
+  default     = "cron(0 2 1 * ? *)"
+}
+
+variable "monthly_backup_retention_days" {
+  type        = string
+  description = "(optional) The max number of days to retain backups"
+  default     = "365"
+}
+
+variable "monthly_backup_cold_storage_days" {
+  type        = string
+  description = "(optional) The number of days to wait before moving backups to cold storage"
+  default     = "0"
 }
