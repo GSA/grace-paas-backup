@@ -48,5 +48,5 @@ variable "monthly_backup_retention_days" {
 variable "monthly_backup_cold_storage_days" {
   type        = string
   description = "(optional) The number of days to wait before moving backups to cold storage"
-  default     = "0"
+  default     = "1"
 }
