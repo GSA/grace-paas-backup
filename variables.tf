@@ -18,7 +18,7 @@ variable "region" {
 variable "daily_backup_schedule" {
   type        = string
   description = "(optional) The cron backup schedule for full backups"
-  default     = "cron(1 * * */1 ? *)"
+  default     = "cron(0 2 * * ? *)"
 }
 
 variable "daily_backup_retention_days" {
