@@ -9,10 +9,10 @@ resource "aws_backup_plan" "daily_backup" {
   rule {
     rule_name         = "daily_backup_rule"
     target_vault_name = aws_backup_vault.backup_vault.name
-    schedule = var.daily_backup_schedule
+    schedule          = var.daily_backup_schedule
     lifecycle {
       cold_storage_after = var.daily_backup_cold_storage_days
-      delete_after = var.daily_backup_retention_days
+      delete_after       = var.daily_backup_retention_days
     }
   }
 }
@@ -35,10 +35,10 @@ resource "aws_backup_plan" "monthly_backup" {
   rule {
     rule_name         = "monthly_backup_rule"
     target_vault_name = aws_backup_vault.backup_vault.name
-    schedule = var.monthly_backup_schedule
+    schedule          = var.monthly_backup_schedule
     lifecycle {
       cold_storage_after = var.monthly_backup_cold_storage_days
-      delete_after = var.monthly_backup_retention_days
+      delete_after       = var.monthly_backup_retention_days
     }
   }
 }
